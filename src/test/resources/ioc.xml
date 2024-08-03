@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+
+    <bean id="userService" class="com.youngspring.test.beans.UserService">
+        <property name="uId" value="1"/>
+        <property name="company" value="A"/>
+        <property name="location" value="B"/>
+    </bean>
+
+    <bean class="com.youngspring.test.beans.UserBeanPostProcessor"/>
+    <bean class="com.youngspring.test.beans.UserBeanFactoryPostProcessor"/>
+
+</beans>

@@ -40,6 +40,12 @@
             <artifactId>jol-cli</artifactId>
             <version>0.14</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>

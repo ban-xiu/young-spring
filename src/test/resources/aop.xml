@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+
+    <bean id="userService" class="com.youngspring.test.beans.UserService">
+        <property name="uId" value="1"/>
+        <property name="company" value="A"/>
+        <property name="location" value="B"/>
+    </bean>
+
+    <bean class="com.youngspring.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
+
+    <bean id="beforeAdvice" class="com.youngspring.test.beans.UserServiceBeforeAdvice"/>
+
+    <bean id="methodInterceptor" class="com.youngspring.aop.framework.adapter.MethodBeforeAdviceInterceptor">
+        <property name="advice" ref="beforeAdvice"/>
+    </bean>
+
+    <bean id="pointcutAdvisor" class="com.youngspring.aop.aspectj.AspectJExpressionPointcutAdvisor">
+        <property name="expression" value="execution(* com.youngspring.test.beans.IUserService.*(..))"/>
+        <property name="advice" ref="methodInterceptor"/>
+    </bean>
+
+</beans>
